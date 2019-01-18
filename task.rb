@@ -1,4 +1,3 @@
-# Подключим встроенный в руби класс Date для работы с датами
 require 'date'
 
 class Task < Post
@@ -24,5 +23,21 @@ class Task < Post
     deadline = "Крайний строк: #{@due_data}"
 
     return [deadline, @text, time_string]
+  end
+
+  def to_db_hash
+    return super.merge(
+                    {
+                        'text' => @text,
+                        'due_date'=> @due_data.to_s
+                    }
+    )
+  end
+
+  def load_data(data_hash)
+    super # сперва дергаем родительский метод для общих полей
+
+    # теперь прописываем свое специфичное поле
+    @due_date = Date.parse(data_hash['due_date'])
   end
 end
