@@ -1,31 +1,34 @@
-## Notepad
-Блокнот  - для записи и хранения различных заметок. Реализация на Ruby
+# Notepad  
+A simple Ruby-based notepad application for writing and storing notes.
 
-## Запуск
-Для запуска необходимо:
+## 🚀 Launch  
+**Requirements:**  
+- Ruby installed  
+- SQLite installed  
+- `sqlite3` gem installed  
 
-Установленный Ruby
-Установленный SQLite
-Установленный gem sqlite3
-Команда для запуска из консоли:
-
-Добавление нового поста:
-```
+**Commands:**  
+```bash
+# Add new post
 ruby new_post.rb
-```
-Чтение предыдущих постов:
-```
+
+# Read posts
 ruby read.rb [options]
-```
-Вызов справки:
-```
+
+# Show help
 ruby read.rb -h
 ```
-## Типы записей
-Блокнот позволяет сохранять записи трех типов:
+📝 Entry Types
+Supports 3 note types:
 
-* Memo - текстовая заметка
-* Task - задача
-* Link - ссылка
-## Хранение записей
-Записи сохраняются в файл ```notepad.sqlite``` в корневом каталоге программы. При отсутствии файла он будет сформирован при первом запуске
+Memo - Text note
+
+Task - Todo item
+
+Link - Web URL
+
+💾 Storage
+All entries are saved in:
+```notepad.sqlite``` (SQLite database in root directory)
+
+❗ File auto-created on first run if missing
